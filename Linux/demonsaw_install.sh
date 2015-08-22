@@ -10,6 +10,7 @@ MACHARCH=`uname -m`
 
 echo ""
 echo "Downloading Demonsaw based on your machine's arch..."
+sleep 2
 echo ""
 
 if [ $MACHARCH == 'x86_64' ]; then
@@ -22,13 +23,14 @@ echo ""
 echo ""
 
 echo "Downloading libraries needed to run demonsaw next, you should be prompted for your sudo password"
+sleep 4
 
 sudo apt-get update && sudo apt-get install libxcb-render-util0 libxcb-image0 libxcb-icccm4 libxcb-randr0 libxcb-keysyms1
 
 if [ $MACHARCH == 'x86_64' ]; then
-	ln -s /usr/lib/x86_64-linux-gnu/libxcb-sync.so.1 /usr/lib/libxcb-sync.so.0
+	sudo ln -s /usr/lib/x86_64-linux-gnu/libxcb-sync.so.1 /usr/lib/libxcb-sync.so.0
 else
-	ln -s /usr/lib/i386-linux-gnu/libxcb-sync.so.1 /usr/lib/libxcb-sync.so.0
+	sudo ln -s /usr/lib/i386-linux-gnu/libxcb-sync.so.1 /usr/lib/libxcb-sync.so.0
 fi
 
 echo "Almost done, unpacking the files now"
