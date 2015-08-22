@@ -25,7 +25,7 @@ echo ""
 echo "Downloading libraries needed to run demonsaw next, you should be prompted for your sudo password"
 sleep 4
 
-sudo apt-get update && sudo apt-get install libxcb-render-util0 libxcb-image0 libxcb-icccm4 libxcb-randr0 libxcb-keysyms1
+sudo apt-get update && sudo apt-get install libxcb-render-util0 libxcb-image0 libxcb-icccm4 libxcb-randr0 libxcb-keysyms1 libxcb-sync0 libxcb-xfixes0
 
 if [ $MACHARCH == 'x86_64' ]; then
 	sudo ln -s /usr/lib/x86_64-linux-gnu/libxcb-sync.so.1 /usr/lib/libxcb-sync.so.0
