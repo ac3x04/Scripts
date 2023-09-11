@@ -14,11 +14,10 @@ __author__ = "Ace Xor"
 __copyright__ = "Copyright 2023"
 __credits__ = ["Festus Pemberton", "Fabdb API"]
 __license__ = "GPL"
-__version__ = "1.0.1"
 __maintainer__ = "Ace Xor"
 __email__ = "ac3x04@gmail.com"
 __status__ = "Dev"
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 allSets = {"WTR" : "225", "ARC" : "218", "CRU" : "197", "MON" : "306", "ELE" : "237", "EVR" : "197", "UPR" : "225", "OUT" : "238", "DTD" : "235"}
 scriptHeader = {'User-Agent' : "fabCardScraper"}
@@ -51,14 +50,10 @@ def fullSet(setId, cardCount):
         time.sleep(1.5)
     return cardsList
 
-def jsonify(aList):
-    #Converts a list to a json object
-    return json.dumps(aList)
-
 for fabSet in allSets:
     allCardsList.append(fullSet(fabSet, allSets[fabSet]))
 
 print(allCardsList)
-#with open("fulldb.json", "rw") as jsonFile:
-#    pass
+with open("fulldb.json", "w") as jsonFile:
+    json.dump(allCardsList, jsonFile)
 
