@@ -1,4 +1,4 @@
-#/usr/bin/python3
+#!/usr/bin/python3
 
 """Connects to fabdb and gets all information about a cards from each set
 
@@ -17,7 +17,7 @@ __license__ = "GPL"
 __maintainer__ = "Ace Xor"
 __email__ = "ac3x04@gmail.com"
 __status__ = "Dev"
-__version__ = "0.2.1"
+__version__ = "0.2.2"
 
 allSets = {"WTR" : "225", "ARC" : "218", "CRU" : "197", "MON" : "306", "ELE" : "237", "EVR" : "197", "UPR" : "225", "OUT" : "238", "DTD" : "235"}
 scriptHeader = {'User-Agent' : "fabCardScraper"}
