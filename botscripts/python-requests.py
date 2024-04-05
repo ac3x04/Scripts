@@ -12,6 +12,7 @@ import sys
 
 wwwArg = "https://" + str(sys.argv[1])
 response = requests.get(wwwArg)
+print(response.request.headers)
 print(response.status_code)
 print(response.headers)
 print(response.content)
